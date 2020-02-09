@@ -31,10 +31,10 @@ const TemplateWrapper = ({ children }) => {
             }
             copyright
           }
-          allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
+          allDatoCmsSocialLink(sort: { fields: [position], order: ASC }) {
             edges {
               node {
-                profileType
+                linkType
                 url
               }
             }
@@ -68,12 +68,12 @@ const TemplateWrapper = ({ children }) => {
                 </li>
               </ul>
               <p className="sidebar__social">
-                {data.allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
+                {data.allDatoCmsSocialLink.edges.map(({ node: link }) => (
                   <a
-                    key={profile.profileType}
-                    href={profile.url}
+                    key={link.linkType}
+                    href={link.url}
                     target="blank"
-                    className={`social social--${profile.profileType.toLowerCase()}`}
+                    className={`social social--${link.linkType.toLowerCase()}`}
                   >
                     {" "}
                   </a>
