@@ -1,28 +1,20 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Masonry from 'react-masonry-component'
-import Img from 'gatsby-image'
-import Layout from "../components/layout"
+import Layout from '../components/layout'
+import ProjectCard from '../components/projectCard'
 
 const IndexPage = ({ data }) => (
   <Layout>
     <Masonry className="showcase">
       {data.allDatoCmsProject.edges.map(({ node: project }) => (
-        <div key={project.id} className="showcase__item">
-          <figure className="card">
-            <Link to={`/projects/${project.slug}`} className="card__image">
-              <Img fluid={project.coverImage.fluid} />
-            </Link>
-            <figcaption className="card__caption">
-              <h6 className="card__title">
-                <Link to={`/projects/${project.slug}`}>{project.title}</Link>
-              </h6>
-              <div className="card__description">
-                <p>{project.excerpt}</p>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
+        <ProjectCard
+          id={project.id}
+          slug={project.slug}
+          coverImage={project.coverImage}
+          title={project.title}
+          excerpt={project.excerpt}
+        />
       ))}
     </Masonry>
   </Layout>
