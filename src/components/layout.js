@@ -4,9 +4,12 @@ import { Link } from 'gatsby'
 import { StaticQuery, graphql } from 'gatsby'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import '../styles/index.sass'
+import LinksBar from './Social/LinksBar'
 
-const TemplateWrapper = ({ children }) => {
+export const TemplateWrapper = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false)
+
+
   return (
     <StaticQuery
       query={graphql`
@@ -29,14 +32,6 @@ const TemplateWrapper = ({ children }) => {
               }
             }
             copyright
-          }
-          allDatoCmsSocialLink(sort: { fields: [position], order: ASC }) {
-            edges {
-              node {
-                linkType
-                url
-              }
-            }
           }
         }
       `}
@@ -65,19 +60,14 @@ const TemplateWrapper = ({ children }) => {
                 <li>
                   <Link to="/about">About</Link>
                 </li>
+                <li>
+                  <Link to="/portfolio">Portfolio</Link>
+                </li>
+                <li>
+                  <Link to="/cv">CV</Link>
+                </li>
               </ul>
-              <p className="sidebar__social">
-                {data.allDatoCmsSocialLink.edges.map(({ node: link }) => (
-                  <a
-                    key={link.linkType}
-                    href={link.url}
-                    target="blank"
-                    className={`social social--${link.linkType.toLowerCase()}`}
-                  >
-                    {' '}
-                  </a>
-                ))}
-              </p>
+              <LinksBar />
               <div className="sidebar__copyright">
                 {data.datoCmsHome.copyright}
               </div>
