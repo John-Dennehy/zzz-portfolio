@@ -1,10 +1,9 @@
 import React from 'react'
 import Layout from '../components/layout'
-import Showcase from '../components/Showcase'
+import AllProjects from '../components/AllProjects'
 
 export default ({ data }) => (
   <Layout>
-
-    <Showcase />
+    <AllProjects />
   </Layout>
 )

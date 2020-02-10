@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { StaticQuery, graphql } from 'gatsby'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import '../styles/index.sass'
-import LinksBar from './Social/LinksBar'
+import LinksBar from './LinksBar'
 
 export const TemplateWrapper = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false)
