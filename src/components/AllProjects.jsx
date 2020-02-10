@@ -8,8 +8,7 @@ export default () => {
   const data = useStaticQuery(graphql`
     query ShowcaseQuery {
       allDatoCmsProject(
-          sort: { fields: [position], order: ASC },
-          filter: {showcase: {eq: true}}
+          sort: { fields: [position], order: ASC }
         ) {
         edges {
           node {
@@ -29,7 +28,7 @@ export default () => {
   )
 
   return (
-    <div className="section">
+    <>
       <h1 className='title'>All Projects</h1>
       <Masonry className="container showcase">
         {data.allDatoCmsProject.edges.map(({ node: project }) => (
@@ -42,6 +41,6 @@ export default () => {
           />
         ))}
       </Masonry>
-    </div>
+    </>
   )
 }

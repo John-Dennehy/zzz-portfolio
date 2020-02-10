@@ -1,14 +1,14 @@
 import React from 'react'
 import Layout from '../components/layout'
+import Navbar from '../components/Navbar'
 
-const NotFoundPage = () => (
+export default () => (
   <Layout>
-    <div>
+    <Navbar />
+    <div className='section'>
       <h1>PAGE NOT FOUND</h1>
       <p>Sorry, but that page doesn't exist.</p>
     </div>
   </Layout>
 
 )
-
-export default NotFoundPage

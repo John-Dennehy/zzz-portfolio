@@ -3,9 +3,12 @@ import { graphql } from 'gatsby'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 
 const About = ({ data: { about } }) => (
   <Layout>
+    <Navbar />
     <article className="sheet">
       <HelmetDatoCms seo={about.seoMetaTags} />
       <div className="sheet__inner">
@@ -22,6 +25,7 @@ const About = ({ data: { about } }) => (
         />
       </div>
     </article>
+    <Footer />
   </Layout>
 )
 

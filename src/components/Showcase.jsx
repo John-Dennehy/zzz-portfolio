@@ -8,7 +8,8 @@ export default () => {
   const data = useStaticQuery(graphql`
     query AllProjectsQuery {
       allDatoCmsProject(
-          sort: { fields: [position], order: ASC }
+          sort: { fields: [position], order: ASC },
+          filter: {showcase: {eq: true}}
         ) {
         edges {
           node {
@@ -29,20 +30,22 @@ export default () => {
 
   return (
 
-    <div className="section">
-      <h1 className='title'>Highlighted Projects</h1>
-      <Masonry className="container showcase">
-        {data.allDatoCmsProject.edges.map(({ node: project }) => (
-          <ProjectCard
-            id={project.id}
-            slug={project.slug}
-            coverImage={project.coverImage}
-            title={project.title}
-            excerpt={project.excerpt}
-          />
-        ))}
-      </Masonry>
-    </div>
+    <>
+      <div className="section card">
+        <h1 className='title'>Highlighted Projects</h1>
+        <Masonry className="container showcase">
+          {data.allDatoCmsProject.edges.map(({ node: project }) => (
+            <ProjectCard
+              id={project.id}
+              slug={project.slug}
+              coverImage={project.coverImage}
+              title={project.title}
+              excerpt={project.excerpt}
+            />
+          ))}
+        </Masonry>
+      </div>
+    </>
 
   )
 }

@@ -47,7 +47,7 @@ export const query = graphql`
       title
       excerpt
       gallery {
-        fluid(maxWidth: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
+        fluid(maxWidth: 200, maxHeight: 150, imgixParams: { fm: "jpg", auto: "compress" }) {
           src
         }
       }
@@ -58,7 +58,7 @@ export const query = graphql`
       }
       coverImage {
         url
-        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+        fluid(maxHeight: 400, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsSizes
         }
       }
