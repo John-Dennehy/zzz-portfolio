@@ -29,11 +29,10 @@ export default () => {
   )
 
   return (
-
     <>
-      <div className="section card">
+      <div className="section card showcase">
         <h1 className='title'>Highlighted Projects</h1>
-        <Masonry className="container showcase">
+        <Masonry className="container">
           {data.allDatoCmsProject.edges.map(({ node: project }) => (
             <ProjectCard
               id={project.id}

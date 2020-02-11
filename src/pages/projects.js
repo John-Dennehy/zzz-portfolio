@@ -1,8 +1,8 @@
 import React from 'react'
-import Layout from '../components/layout'
-import AllProjects from '../components/AllProjects'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
+import Layout from '../components/layouts/layout'
+import AllProjects from '../components/projects/AllProjects'
+import Footer from '../components/layouts/Footer'
+import Navbar from '../components/layouts/Navbar'
 
 export default () => (
   <Layout>

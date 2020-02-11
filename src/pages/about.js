@@ -2,9 +2,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import Img from 'gatsby-image'
-import Layout from '../components/layout'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
+import Layout from '../components/layouts/layout'
+import Footer from '../components/layouts/Footer'
+import Navbar from '../components/layouts/Navbar'
 
 const About = ({ data: { about } }) => (
   <Layout>
@@ -40,7 +40,7 @@ export const query = graphql`
       title
       subtitle
       photo {
-        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+        fluid(maxWidth: 300, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsSizes
         }
       }

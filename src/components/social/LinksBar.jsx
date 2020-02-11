@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import SocialLink from './SocialLink'
 
 export default () => {
 
@@ -17,17 +18,12 @@ export default () => {
   )
 
   return (
-    <p className="level sidebar__social">
+    <div className="level-item is-mobile">
       {data.allDatoCmsSocialLink.edges.map(({ node: link }) => (
-        <a level-item
-          key={link.linkType}
-          href={link.url}
-          target="blank"
-          className={`social button social--${link.linkType.toLowerCase()}`}
-        >
-          {' '}
-        </a>
+        <div >
+          <SocialLink linkType={link.linkType} url={link.url} />
+        </div>
       ))}
-    </p>
+    </div>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import Intro from './Intro'
 
 export default () => {
 
@@ -29,11 +30,7 @@ export default () => {
             <h1 className="title">
               Primary bold title
       </h1>
-            <div className="subtitle" dangerouslySetInnerHTML={{
-              __html:
-                data.datoCmsHome.introTextNode.childMarkdownRemark.html,
-            }}>
-            </div>
+            <Intro />
           </div>
         </div>
         <div className="hero-foot">Foot</div>

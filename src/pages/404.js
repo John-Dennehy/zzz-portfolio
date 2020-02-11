@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from '../components/layout'
-import Navbar from '../components/Navbar'
+import Layout from '../components/layouts/layout'
+import Navbar from '../components/layouts/Navbar'
 
 export default () => (
   <Layout>

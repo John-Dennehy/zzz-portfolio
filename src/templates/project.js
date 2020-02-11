@@ -3,7 +3,7 @@ import Slider from 'react-slick'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
+import Layout from '../components/layouts/layout'
 
 export default ({ data }) => (
   <Layout>
