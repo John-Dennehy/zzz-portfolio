@@ -18,8 +18,16 @@ export default () => {
   return (
     <Layout>
       <Navbar />
-      <Intro />
-      <Showcase />
+      <div className="section">
+        <div className="columns">
+          <div className="column">
+            <Intro />
+          </div>
+          <div className="column">
+            <Showcase />
+          </div>
+        </div>
+      </div>
       <Footer />
     </Layout>
   )

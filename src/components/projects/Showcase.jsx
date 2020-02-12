@@ -30,19 +30,22 @@ export default () => {
 
   return (
     <>
-      <div className="section card showcase">
-        <h1 className='title'>Highlighted Projects</h1>
-        <Masonry className="container">
-          {data.allDatoCmsProject.edges.map(({ node: project }) => (
-            <ProjectCard
-              id={project.id}
-              slug={project.slug}
-              coverImage={project.coverImage}
-              title={project.title}
-              excerpt={project.excerpt}
-            />
-          ))}
-        </Masonry>
+      <div className="section">
+        <div className="showcase">
+          <h1 className='title'>Highlighted Projects</h1>
+          <Masonry className="container">
+            {data.allDatoCmsProject.edges.map(({ node: project }) => (
+              <ProjectCard
+                id={project.id}
+                slug={project.slug}
+                coverImage={project.coverImage}
+                title={project.title}
+                excerpt={project.excerpt}
+              />
+            ))}
+          </Masonry>
+
+        </div>
       </div>
     </>
 

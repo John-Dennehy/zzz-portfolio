@@ -16,10 +16,12 @@ export default () => {
   `)
 
   return (
-    <div className="subtitle" dangerouslySetInnerHTML={{
-      __html:
-        data.datoCmsHome.introTextNode.childMarkdownRemark.html,
-    }}>
+    <div className="container intro">
+      <div className="title" dangerouslySetInnerHTML={{
+        __html:
+          data.datoCmsHome.introTextNode.childMarkdownRemark.html,
+      }}>
+      </div>
     </div>
   )
 }
