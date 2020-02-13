@@ -1,25 +1,31 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import LinksBar from '../social/LinksBar'
 
 export default () => {
 
+  const data = useStaticQuery(graphql`
+    query LogoQuery {
+      datoCmsHome {
+        logo: navbarLogo {
+          fluid(maxWidth: 30) { ...GatsbyDatoCmsFluid_tracedSVG}
+          alt
+        }
+      }
+    }
+  `)
+
+
   return (
-    <nav className="navbar is-fixed level" role="navigation" aria-label="main navigation">
+    <header className="header level is-mobile " >
       <div className="level-left">
-        <div className="navbar-brand">
-          <a className="navbar-item is-button" href="/">
-            <h1 className="title">JDtheGeek</h1>
-          </a>
-        </div>
-      </div>
-      <div className="level-item navbar-item">
-        <LinksBar />
+        <a className="logo" href="/">
+          <img fluid={data.datoCmsHome.navbarLogo.fluid} alt={data.datoCmsHome.navbarLogo.alt} />
+        </a>
       </div>
       <div className="level-right">
-        <a className="navbar-item page-link" href="/projects"> Projects </a>
-        <a className="navbar-item page-link" href="/cv">CV</a>
-        <a className="navbar-item page-link" href="/about">About</a>
+        <LinksBar />
       </div>
-    </nav>
+    </header>
   )
 }

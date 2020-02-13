@@ -6,6 +6,7 @@ export default () => {
   const data = useStaticQuery(graphql`
   query IntroQuery {
     datoCmsHome {
+      introTitle
       introTextNode {
         childMarkdownRemark {
           html
@@ -15,9 +16,14 @@ export default () => {
   }
   `)
 
+  const title = data.datoCmsHome.introTitle
+
   return (
     <div className="container intro">
-      <div className="title" dangerouslySetInnerHTML={{
+      <h1 className="title">
+        {title}
+      </h1>
+      <div className="sub-title" dangerouslySetInnerHTML={{
         __html:
           data.datoCmsHome.introTextNode.childMarkdownRemark.html,
       }}>

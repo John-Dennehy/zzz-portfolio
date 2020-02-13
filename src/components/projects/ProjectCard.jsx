@@ -3,9 +3,11 @@ import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 
 export default (props) => {
+
   return (
     <div key={props.id} className="showcase__item">
       <div className="project-card card">
+
         <figure>
           <Link to={`/projects/${props.slug}`} className="card__image">
             <Img fluid={props.coverImage.fluid} />

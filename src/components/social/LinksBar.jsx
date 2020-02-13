@@ -18,9 +18,9 @@ export default () => {
   )
 
   return (
-    <div className="level-item is-mobile">
+    <div className="links-bar level is-mobile">
       {data.allDatoCmsSocialLink.edges.map(({ node: link }) => (
-        <div >
+        <div className='circle level-item'>
           <SocialLink linkType={link.linkType} url={link.url} />
         </div>
       ))}

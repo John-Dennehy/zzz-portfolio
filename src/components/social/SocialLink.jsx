@@ -17,15 +17,16 @@ export default (props) => {
   }
 
   return (
-    <div className="circle">
+    <div className='paperButton'>
       <a
         key={props.linkType}
         href={props.url}
         target="blank"
-        className={`level-item fa social button`}
+        className={`fa social`}
       >
         <FontAwesomeIcon icon={getIcon()} size='2x' />
       </a>
     </div>
+
   )
 }

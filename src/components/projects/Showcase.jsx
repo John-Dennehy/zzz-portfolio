@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Masonry from 'react-masonry-component'
-import ProjectCard from './ProjectCard'
+import ShowcaseCard from './ProjectCard'
 
 export default () => {
 
@@ -10,16 +10,16 @@ export default () => {
       allDatoCmsProject(
           sort: { fields: [position], order: ASC },
           filter: {showcase: {eq: true}}
-        ) {
-        edges {
-          node {
-            id
-            title
-            slug
-            excerpt
-            coverImage {
-              fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
-                ...GatsbyDatoCmsSizes
+      ) {
+      edges {
+        node {
+          id
+          title
+          slug
+          excerpt
+          coverImage {
+            fluid(maxWidth: 200, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsSizes_tracedSVG
               }
             }
           }
@@ -35,7 +35,7 @@ export default () => {
           <h1 className='title'>Highlighted Projects</h1>
           <Masonry className="container">
             {data.allDatoCmsProject.edges.map(({ node: project }) => (
-              <ProjectCard
+              <ShowcaseCard
                 id={project.id}
                 slug={project.slug}
                 coverImage={project.coverImage}
